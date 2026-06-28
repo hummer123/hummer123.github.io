@@ -1,0 +1,107 @@
+baseURL = "https://hummer123.github.io/"
+title = "yanpeng's Notebook"
+theme = "PaperMod"
+
+# 中文站点必备（影响字数统计、摘要、CJK 友好）
+defaultContentLanguage = "zh-cn"
+hasCJKLanguage = true
+
+# 文章列表分页
+paginate = 10
+
+# 输出格式
+outputs = { home = ["HTML", "RSS"], section = ["HTML", "RSS"], taxonomy = ["HTML", "RSS"], term = ["HTML"] }
+
+# ----------------------------------------------------------------------------
+# 站点参数
+# ----------------------------------------------------------------------------
+[params]
+  env = "production"
+  description = "一个用来记录、思考、写字的地方"
+  keywords = ["Blog", "Notes", "Writing"]
+  author = "yanpeng.wang"
+  DateFormat = "2006-01-02"
+  defaultTheme = "auto"            # 跟随系统深色 / 浅色
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true           # 文末上一篇 / 下一篇
+  ShowBreadCrumbs = false
+  ShowCodeCopyButtons = true        # 代码块右上角复制按钮
+  ShowRssButtonInMenu = true
+  disableSpecial1stPost = true
+  disableScrollToTop = false
+  comments = false                  # 先关掉，需要时再开（Giscus）
+  toc = true                        # 文章右侧目录
+
+  # 主页模式：留空用默认的"最新文章列表"，专注写作
+  # 想用"profile mode"（大头像 + 简介）就把下面这块打开
+  # [params.profileMode]
+  #   enabled = true
+  #   title = "My Notebook"
+  #   subtitle = "记录、思考、写字"
+
+  # 首页副标题（默认模式下显示在标题下）
+  [params.homeInfoParams]
+    Title = "yanpeng's Notebook"
+    Content = """
+📝 在写点什么
+
+这里是自我介绍 / 副标题 / 引导语。
+"""
+
+[params.assets]
+  favicon = "/favicon.ico"
+
+# ----------------------------------------------------------------------------
+# 菜单（导航栏）
+# ----------------------------------------------------------------------------
+[[menu.main]]
+  identifier = "posts"
+  name = "文章"
+  url = "/posts/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "archives"
+  name = "归档"
+  url = "/archives/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "about"
+  name = "关于"
+  url = "/about/"
+  weight = 30
+
+# ----------------------------------------------------------------------------
+# Markdown 渲染
+# ----------------------------------------------------------------------------
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true                  # 允许内联 HTML
+
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "monokai"                # 代码高亮主题，可换：github、nord、dracula
+
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+
+# ----------------------------------------------------------------------------
+# 隐私 / SEO 优化
+# ----------------------------------------------------------------------------
+[privacy]
+  [privacy.x]
+    enableDNT = true
+    privacyEnhanced = true
+
+# ----------------------------------------------------------------------------
+# Permalinks（可选）
+# ----------------------------------------------------------------------------
+# [permalinks]
+#   posts = "/:year/:slug/"
