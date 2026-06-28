@@ -6,8 +6,9 @@ theme = "PaperMod"
 defaultContentLanguage = "zh-cn"
 hasCJKLanguage = true
 
-# 文章列表分页
-paginate = 10
+# 文章列表分页（v0.128.0 起 `paginate` 弃用并随后移除，必须用新写法）
+[pagination]
+  pagerSize = 10
 
 # 输出格式
 outputs = { home = ["HTML", "RSS"], section = ["HTML", "RSS"], taxonomy = ["HTML", "RSS"], term = ["HTML"] }
